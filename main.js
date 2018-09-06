@@ -33,7 +33,6 @@ randomize.addEventListener('click', result);
 
 function result() {
     var newStory = storyText;
-    // alert(newStory);
     var xItem = randomValueFromArray(insertX);
     var yItem = randomValueFromArray(insertY);
     var zItem = randomValueFromArray(insertZ);
@@ -43,11 +42,8 @@ function result() {
     newStory = replaceTwice(newStory, ":insertz:", zItem);
 
     if (customName.value !== '') {
-        // alert("got into result");
         var name = customName.value;
-        // alert(name);
         newStory = newStory.replace("Bob", name);
-        // alert(newStory);
     }
 
     if (document.getElementById("uk").checked) {
@@ -67,10 +63,6 @@ function fahrenheit2celsius(fahrenheit) {
     return (fahrenheit - 32) / 1.8;
 }
 
-function celsius2fahrenheit(celsius) {
-    return celsius * 1.8 + 32.0;
-}
-
 function pounds2stone(pounds) {
     return pounds * 0.071429;
 }
@@ -78,7 +70,3 @@ function pounds2stone(pounds) {
 function replaceTwice(input, current, replacement) {
     return input.replace(current, replacement).replace(current, replacement);
 }
-
-// function replaceTwice(input, current, replacement) {
-//     return input.replace(current, replacement).replace(current, replacement);
-// }
