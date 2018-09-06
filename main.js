@@ -33,26 +33,29 @@ randomize.addEventListener('click', result);
 
 function result() {
     var newStory = storyText;
+    // alert(newStory);
     var xItem = randomValueFromArray(insertX);
     var yItem = randomValueFromArray(insertY);
     var zItem = randomValueFromArray(insertZ);
 
-    newStory.replace(":insertx", xItem).replace(":insertx", xItem);
-    newStory.replace(":inserty", yItem).replace(":inserty", yItem);
-    newStory.replace(":insertz", zItem).replace(":insertz", zItem);
+    newStory = newStory.replace(":insertx:", xItem).replace(":insertx:", xItem);
+    newStory = newStory.replace(":inserty:", yItem).replace(":inserty:", yItem);
+    newStory = newStory.replace(":insertz:", zItem).replace(":insertz:", zItem);
 
     if (customName.value !== '') {
+        // alert("got into result");
         var name = customName.value;
-        newStory.replace("Bob", name);
-
+        // alert(name);
+        newStory = newStory.replace("Bob", name);
+        // alert(newStory);
     }
 
     if (document.getElementById("uk").checked) {
         var weight = Math.round(pounds2stone(300)) + " stone ";
         var temperature = Math.round(fahrenheit2celsius(94)) + " centigrade";
 
-        newStory.replace("94 fahrenheit", temperature);
-        newStory.replace("300 pounds", weight);
+        newStory = newStory.replace("94 fahrenheit", temperature);
+        newStory = newStory.replace("300 pounds", weight);
 
     }
 
