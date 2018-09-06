@@ -38,9 +38,9 @@ function result() {
     var yItem = randomValueFromArray(insertY);
     var zItem = randomValueFromArray(insertZ);
 
-    newStory = newStory.replace(":insertx:", xItem).replace(":insertx:", xItem);
-    newStory = newStory.replace(":inserty:", yItem).replace(":inserty:", yItem);
-    newStory = newStory.replace(":insertz:", zItem).replace(":insertz:", zItem);
+    newStory = replaceTwice(newStory, ":insertx:", xItem);
+    newStory = replaceTwice(newStory, ":inserty:", yItem);
+    newStory = replaceTwice(newStory, ":insertz:", zItem);
 
     if (customName.value !== '') {
         // alert("got into result");
@@ -74,3 +74,11 @@ function celsius2fahrenheit(celsius) {
 function pounds2stone(pounds) {
     return pounds * 0.071429;
 }
+
+function replaceTwice(input, current, replacement) {
+    return input.replace(current, replacement).replace(current, replacement);
+}
+
+// function replaceTwice(input, current, replacement) {
+//     return input.replace(current, replacement).replace(current, replacement);
+// }
