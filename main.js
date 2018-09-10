@@ -2,9 +2,9 @@
 // variables that store references to the "Enter custom name" text field (customName),
 // the "Generate random story" button (randomize), and the <p> element at the bottom 
 // of the HTML body that the story will be copied into (story), respectively
-var customName = document.getElementById('customname');
-var randomize = document.querySelector('.randomize');
-var story = document.querySelector('.story');
+const customName = document.getElementById('customname');
+const randomize = document.querySelector('.randomize');
+const story = document.querySelector('.story');
 
 // takes an array, and returns one of the items stored inside the array at random.
 function randomValueFromArray(array) {
@@ -13,36 +13,36 @@ function randomValueFromArray(array) {
 
 // 2. RAW TEXT STRINGS
 
-var storyText = "It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.";
+const storyText = "It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.";
 
-var insertX = ["Willy the Goblin", "Big Daddy", "Father Christmas"]
+const insertX = ["Willy the Goblin", "Big Daddy", "Father Christmas"];
 
-var insertY = ["the soup kitchen", "Disneyland", , "the White House"];
+const insertY = ["the soup kitchen", "Disneyland", , "the White House"];
 
-var insertZ = ["spontaneously combusted", "melted into a puddle on the sidewalk", "turned into a slug and crawled away"];
+const insertZ = ["spontaneously combusted", "melted into a puddle on the sidewalk", "turned into a slug and crawled away"];
 
 // 3. EVENT LISTENER AND PARTIAL FUNCTION DEFINITION
 
 randomize.addEventListener('click', result);
 
 function result() {
-    var newStory = storyText;
-    var xItem = randomValueFromArray(insertX);
-    var yItem = randomValueFromArray(insertY);
-    var zItem = randomValueFromArray(insertZ);
+    let newStory = storyText;
+    const xItem = randomValueFromArray(insertX);
+    const yItem = randomValueFromArray(insertY);
+    const zItem = randomValueFromArray(insertZ);
 
     newStory = replaceTwice(newStory, ":insertx:", xItem);
     newStory = replaceTwice(newStory, ":inserty:", yItem);
     newStory = replaceTwice(newStory, ":insertz:", zItem);
 
     if (customName.value !== '') {
-        var name = customName.value;
+        let name = customName.value;
         newStory = newStory.replace("Bob", name);
     }
 
     if (document.getElementById("uk").checked) {
-        var weight = Math.round(pounds2stone(300)) + " stone ";
-        var temperature = Math.round(fahrenheit2celsius(94)) + " centigrade";
+        let weight = Math.round(pounds2stone(300)) + " stone ";
+        let temperature = Math.round(fahrenheit2celsius(94)) + " centigrade";
 
         newStory = newStory.replace("94 fahrenheit", temperature);
         newStory = newStory.replace("300 pounds", weight);
