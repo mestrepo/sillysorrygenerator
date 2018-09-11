@@ -1,7 +1,10 @@
-// 1. COMPLETE VARIABLE AND FUNCTION DEFINITIONS
-// variables that store references to the "Enter custom name" text field (customName),
-// the "Generate random story" button (randomize), and the <p> element at the bottom 
-// of the HTML body that the story will be copied into (story), respectively
+/**
+ * 1. COMPLETE VARIABLE AND FUNCTION DEFINITIONS
+ * variables that store references to the "Enter custom name" text field (customName),
+ * the "Generate random story" button (randomize), and the <p> element at the bottom
+ * of the HTML body that the story will be copied into (story), respectively
+ * @type {HTMLElement}
+ */
 const customName = document.getElementById('customname');
 const randomize = document.querySelector('.randomize');
 const story = document.querySelector('.story');
@@ -16,18 +19,22 @@ function randomValueFromArray(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
 
-// 2. RAW TEXT STRINGS
+/**
+ * 2. RAW TEXT STRINGS
+ * @type {string}
+ */
 
 const storyText = "It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.";
 
 const insertX = ["Willy the Goblin", "Big Daddy", "Father Christmas"];
 
-const insertY = ["the soup kitchen", "Disneyland" , "the White House"];
+const insertY = ["the soup kitchen", "Disneyland", "the White House"];
 
 const insertZ = ["spontaneously combusted", "melted into a puddle on the sidewalk", "turned into a slug and crawled away"];
 
-// 3. EVENT LISTENER AND PARTIAL FUNCTION DEFINITION
-
+/**
+ * 3. EVENT LISTENER AND PARTIAL FUNCTION DEFINITION
+ */
 randomize.addEventListener('click', result);
 
 /**
